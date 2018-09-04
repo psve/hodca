@@ -31,7 +31,7 @@ We can then use the above range to filter our call too tracergrind, i.e.
 valgrind --tool=tracergrind --output=aes_simple.trace --filter=0x109080-0x109785 ./aes_simple 00000000000000000000000000000000
 ```
 
-If you wish to further narrow down the range, we recommand using `TraceGraph` to do visual inspection. Now, we can use the `trace_it.py` script to collect a large number of traces. This will collect 100 traces into a single file as well as the plaintext inputs used to generate the traces, in our case the files `data_W_100_8096.trace` and `data_W_100_8096.input`. The first number denotes the number of traces, while the second number denotes the length of each trace. Note that we chose to trace the write operations; this can be change in `trace_it.py`. We can now use `hodca` to recover the key. 
+If you wish to further narrow down the range, we recommend using `TraceGraph` to do visual inspection. Now, we can use the `trace_it.py` script to collect a large number of traces. This will collect 100 traces into a single file as well as the plaintext inputs used to generate the traces, in our case the files `data_W_100_8096.trace` and `data_W_100_8096.input`. The first number denotes the number of traces, while the second number denotes the length of each trace. Note that we chose to trace the write operations; this can be change in `trace_it.py`. We can now use `hodca` to recover the key. 
 
 ```
 hodca --correlation equality --data_type bytes --guess sbox --length 8096 --order 1 --path data_W_100_8096 --traces=100 --window 1
