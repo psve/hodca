@@ -1,0 +1,11 @@
+[package]
+name = "hodca"
+version = "0.1.0"
+authors = ["psve"]
+
+[dependencies]
+structopt = "*"
+num = "*"
+time = "*"
+num_cpus = "*"
+tuple_iterator = { path = "../tuple_iterator"}
