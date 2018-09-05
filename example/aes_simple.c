@@ -143,7 +143,7 @@ int main(int argc, char* argv[]) {
     unsigned char c[16] = {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
     
     char in[32];
-    strcpy(in,argv[1]);
+    strncpy(in, argv[1], 32);
 
     for (size_t i = 0 ; i < 16 ; ++i) {
         unsigned char buffer[3];

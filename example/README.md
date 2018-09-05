@@ -3,7 +3,7 @@
 The file `aes_simple.c` contains a straight forward AES implementation with no protection. To compile it, run e.g.
 
 ```
-gcc -O2 aes_simple -o aes_simple
+gcc -O2 aes_simple.c -o aes_simple
 ```
 
 We now want to collect a number of traces for the resulting binary in order to recover the key. To minimise the size of the traces, it's a good idea to do a preliminary trace. We do this by calling
